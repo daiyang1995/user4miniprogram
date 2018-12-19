@@ -4,4 +4,5 @@
       <image src="{{welcomeImg}}" />
     </view>
   </view>
+    <view class="nextBtn">点击进入</view>
 </block>
