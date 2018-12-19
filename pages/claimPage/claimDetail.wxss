@@ -1,0 +1,162 @@
+.bodyContent {
+  font-size: 28rpx;
+  margin-bottom: 85.6rpx;
+}
+
+.borderBottom {
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.lineHeight {
+  line-height: 80rpx;
+  height: 80rpx;
+}
+
+.textAlignCenter {
+  text-align: center;
+}
+
+.textAlignRight {
+  text-align: right;
+}
+
+.orange {
+  color: #f90;
+}
+
+.blue {
+  display: inline-block;
+  color: #3385ff;
+}
+
+.gray {
+  color: #868686;
+}
+
+.footer {
+  background-color: #3385ff;
+  color: #fff;
+}
+
+.bodyContent>.bodyHeader {
+  background-color: #3385ff;
+  min-height: 250rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+.bodyContent>.bodyHeader>.bigState {
+  margin-top: 30rpx;
+  font-size: 60rpx;
+}
+
+.bodyContent>.baseInfo {
+  padding: 10rpx 20rpx;
+  font-size: 24rpx;
+}
+
+.bodyContent>.baseInfo, .bodyContent>.otherInfo, .bodyContent>.logInfo {
+  background-color: #fff;
+}
+
+.bodyContent>.baseInfo .label {
+  color: #a1a1a1;
+  font-weight: 200;
+}
+
+.bodyContent>.baseInfo>.ui-grid-a>.ui-block-a {
+  width: 30%;
+}
+
+.bodyContent>.baseInfo>.ui-grid-a>.ui-block-b {
+  width: 70%;
+}
+
+.bodyContent>.baseInfo>.oneline {
+  height: 45rpx;
+  line-height: 45rpx;
+}
+
+.bodyContent>.otherInfo>.oneline {
+  padding: 0 20rpx;
+}
+
+.bodyContent>.otherInfo>.oneline>.content:before,
+.bodyContent>.otherInfo>.oneline>.content:after {
+  font-family: fullIconAll;
+  font-size: 40rpx;
+}
+
+.bodyContent>.otherInfo>.oneline>.content:before {
+  float: left;
+  margin-right: 20rpx;
+  width: 60rpx;
+  color: #3385ff;
+  text-align: center;
+}
+
+.bodyContent>.otherInfo>.oneline>.content:after {
+  color: #a1a1a1;
+}
+
+.bodyContent>.otherInfo>.oneline>.money:before {
+  content: "\f1c0";
+}
+
+.bodyContent>.otherInfo>.oneline>.money.haveData:after,
+.bodyContent>.otherInfo>.oneline>.image:after {
+  content: "\f105";
+  float: right;
+}
+
+.bodyContent>.otherInfo>.oneline>.image:before {
+  content: "\f03e";
+}
+
+.bodyContent>.otherInfo>.oneline>.bank:before {
+  content: "\f09d";
+}
+
+.bodyContent>.logInfo {
+  margin-top: 20rpx;
+}
+
+.bodyContent>.logInfo>.oneline {
+  padding: 0 20rpx;
+}
+
+.bodyContent>.logInfo>.oneline>.log:before {
+  font-family: fullIconAll;
+  font-size: 40rpx;
+  float: left;
+  margin-right: 20rpx;
+  width: 60rpx;
+  content: "\f02b";
+  color: #3385ff;
+}
+
+.bodyContent>.logInfo>.oneline>.log>.logText,
+.bodyContent>.logInfo>.oneline>.log>.logDate {
+  display: block;
+  overflow: hidden;
+}
+
+.bodyContent>.logInfo>.oneline>.log>.logText {
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.bodyContent>.logInfo>.oneline>.log>.logDate {
+  height: 20rpx;
+  line-height: 20rpx;
+  font-size: 20rpx;
+}
+
+.logInfo>.oneline {
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.logInfo>.oneline:last-child {
+  border-bottom: 0;
+}

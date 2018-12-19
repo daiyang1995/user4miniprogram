@@ -1,0 +1,27 @@
+<view class="bodyContent">
+  <view class="banner imgview">
+    <image src="{{banner}}" />
+  </view>
+  <form bindsubmit='formSubmit'>
+    <view class="baseInfo">
+      <view class="oneline fullIcon idCardIcon">
+        <input type="text" name="idNum" class="idNum" placeholder="请输入身份证号" />
+      </view>
+      <view class="oneline fullIcon mobileIcon">
+        <input type="number" name="mobile" class="mobile"  bindblur='getMobile'  placeholder="请输入手机号码" />
+      </view>
+      <view class="oneline fullIcon identifyingCodeIcon">
+        <view class="ui-grid-a">
+          <view class="ui-block-a">
+            <input type="number" name="identifyingCode" class="identifyingCode" placeholder="请输入登陆密码" />
+          </view>
+          <view class="ui-block-b textAlignCenter">
+            <view class="sendCode borderLeft" bindtap='sendCode' >{{sendCode}}</view>
+          </view>
+        </view>
+      </view>
+      <button class="bindingBtn textAlignCenter" id="bindingBtn" formType='submit'>绑定</button>
+      <view class="tel textAlignCenter marginTop" data-tel="{{tel}}" bindtap='call'>客服热线：{{tel}}</view>
+    </view>
+  </form>
+</view>

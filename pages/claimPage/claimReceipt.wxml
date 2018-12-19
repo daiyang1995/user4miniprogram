@@ -1,0 +1,41 @@
+<view class="bodyContent">
+  <view class="blockList">
+    <block wx:for="{{pageData.receiptInfo}}" wx:for-item="t" wx:key="xxx" wx:for-index="idx">
+      <view class="oneBlock borderBottom lineHeight" data-key="{{idx}}">
+        <view class="ui-grid-c">
+          <view class="ui-block-a uncheck icon"></view>
+          <view class="ui-block-b">{{t.receiptDateStr}}</view>
+          <view class="ui-block-c">￥ {{t.totalMoney}}元</view>
+          <view class="ui-block-d downArrow"></view>
+        </view>
+      </view>
+      <view class="receiptList borderBottom" data-key="{{idx}}">
+        <block wx:for="{{t.claimReceiptList}}" wx:for-item="t1" wx:key="xxx" wx:for-index="idx1">
+          <view class="oneReceipt <%=str%>">
+            <view class="ui-grid-a">
+              <view class="ui-block-a">就诊日期</view>
+              <view class="ui-block-b">{{t1.receiptDateStr}}</view>
+            </view>
+            <view class="ui-grid-a">
+              <view class="ui-block-a">就诊医院</view>
+              <view class="ui-block-b">{{t1.hospitalName}}</view>
+            </view>
+            <view class="ui-grid-a">
+              <view class="ui-block-a">就诊疾病</view>
+              <view class="ui-block-b">{{t1.diseaseName}}</view>
+            </view>
+            <view class="ui-grid-a">
+              <view class="ui-block-a">发票金额</view>
+              <view class="ui-block-b">￥{{t1.receiptTotal}}元</view>
+            </view>
+            <view class="ui-grid-a">
+              <view class="ui-block-a">赔付金额</view>
+              <view class="ui-block-b">￥{{t1.settlementApprovedMoney}}元</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+  <view class="footer" bindtap='back'>返回</view>
+</view>

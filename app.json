@@ -1,0 +1,23 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/binding/binding",
+    "pages/error/error",
+    "pages/policyDetail/policyDetail",
+    "pages/claimStep/claimStepOne",
+    "pages/claimStep/claimStepTwo",
+    "pages/claimStep/claimStepThree",
+    "pages/claimStep/claimStepFour",
+    "pages/claimPage/claimPage",
+    "pages/claimPage/claimDetail",
+    "pages/claimPage/claimAttach",
+    "pages/claimPage/claimReceipt",
+    "pages/home/home"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

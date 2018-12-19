@@ -1,0 +1,158 @@
+page{
+  background-color: "f9f9f9";
+}
+  
+.littleTip{
+  position: relative;
+  top: 0 ;
+  width: 100%;
+  z-index: 19871229;
+}
+
+.bodyContent{
+    font-size: 28rpx;
+    margin-bottom: 85.6rpx;
+}
+
+.bottomBlock{
+    display: inline-block;
+    position: relative;
+    height: 10rpx;
+    text-align: center;
+    width: 25%;
+    transform: translateY(-300%);
+    z-index: 19871230;
+}
+.bottomBlock>view{
+    display: block;
+    width: 70rpx;
+    height: 10rpx;
+    margin: 0 auto;
+    background-color: #3385ff;
+}
+.borderBottom{
+    border-bottom: 2rpx solid #f2f2f2;
+}
+.textAlignCenter{
+    text-align: center;
+}
+.bodyContent .littleTip .active{
+    color: #3385ff;
+}
+
+.bodyContent .littleTip{
+    background-color: #FFFFFF;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #a1a1a1;
+}
+.bodyContent .bodyOuterScroller{
+    margin-bottom: 85.6rpx;
+    overflow: hidden;
+}
+
+.bodyContent .bodyOuterScroller .scroll{
+    margin-bottom: 85.6rpx;
+}
+.bodyContent .bodyOuterScroller .scroll .noData{
+    display: block;
+    color: #3385ff;
+    margin-top: 60rpx;
+    font-size: 24rpx;
+}
+
+.bodyContent .oneBlock{
+    display: block;
+    margin: 20rpx ;
+    padding: 10rpx 20rpx;
+    background-color: #FFFFFF;
+    border-radius: 10rpx;
+    color: #a1a1a1;
+    box-shadow: 0 0 10rpx 0 #e7e7e7;
+}
+.bodyContent .oneBlock>.state{
+    display: block;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+.bodyContent .oneBlock>.planName{
+    display: block;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+.orange{
+    color: #ff9900;
+}
+.bodyContent .oneBlock>.state.orange::before{
+    background-color: #ff9900;
+}
+.blue{
+    color: #3385ff;
+}
+.bodyContent .oneBlock>.state.blue::before{
+    background-color: #3385ff;
+}
+.gray{
+    color: #868686;
+}
+.bodyContent .oneBlock>.state.gray::before{
+    background-color: #868686;
+}
+.bodyContent .oneBlock>.state::before{
+    content: " ";
+    display: inline-block;
+    float: left;
+    width: 10rpx;
+    height: 20rpx;
+    margin: 15rpx 10rpx 15rpx -20rpx;
+}
+
+.bodyContent .oneBlock>.state{
+    font-size: 24rpx;
+}
+.bodyContent .oneBlock>.planName{
+    font-size: 28rpx;
+}
+.bodyContent .oneBlock>.otherInfo{
+    font-size: 20rpx;
+    height: 60rpx;
+    line-height: 40rpx;
+}
+.bodyContent .oneBlock>.otherInfo .ui-block-a{
+    width: 20%;
+}
+.bodyContent .oneBlock>.otherInfo .ui-block-b{
+    width: 80%;
+}
+.bodyContent .oneBlock::after{
+    content: " ";
+    display:block;
+    height:0;
+    visibility:hidden;
+    clear:both;
+}
+
+.footer>view.ui-block-a, .footer>view.ui-block-b{
+    color: #bbbbbb;
+}
+.footer>view.active{
+    color: #3385ff;
+}
+.footer .topBlock{
+    display: block;
+    position: fixed;
+    height: 10rpx;
+    text-align: center;
+    width: 50%;
+    transform: translateY(100%);
+    z-index: 19871230;
+    bottom: 85.6rpx;
+}
+.footer .topBlock>view{
+    display: block;
+    width: 160rpx;
+    height: 10rpx;
+    margin: 0 auto;
+    background-color: #3385ff;
+}
+

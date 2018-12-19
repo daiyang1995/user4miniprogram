@@ -1,0 +1,139 @@
+.bodyContent{
+    font-size: 28rpx;
+    margin-bottom: 85.6rpx;
+}
+.borderBottom{
+    border-bottom: 2rpx solid #f2f2f2;
+}
+.textAlignCenter{
+    text-align: center;
+}
+.bodyContent .bodyOuterScroller{
+    margin-bottom: 85.6rpx;
+    overflow: hidden;
+}
+.bodyContent .bodyOuterScroller .scroll{
+    margin-bottom: 85.6rpx;
+}
+.bodyContent .bodyOuterScroller .scroll .noData{
+    display: block;
+    color: #3385ff;
+    margin-top: 60rpx;
+    font-size: 24rpx;
+}
+
+.bodyContent .oneBlock{
+    display: block;
+    margin: 20rpx ;
+    padding: 10rpx 20rpx;
+    background-color: #FFFFFF;
+    border-radius: 10rpx;
+    color: #a1a1a1;
+    box-shadow: 0 0 10rpx 0 #e7e7e7;
+}
+.bodyContent .oneBlock>.blockTitle>.state{
+    display: inline-block;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size: 24rpx;
+}
+.bodyContent .oneBlock>.blockTitle>.money{
+    display: inline-block;
+    float: right;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size: 24rpx;
+}
+.bodyContent .oneBlock>.title{
+    display: block;
+    height: 60rpx;
+    line-height: 60rpx;
+}
+.orange{
+    color: #ff9900;
+}
+.bodyContent .oneBlock>.blockTitle>.state.orange:before{
+    background-color: #ff9900;
+}
+.red{
+    color: #ff0000;
+}
+.bodyContent .oneBlock>.blockTitle>.state.red:before{
+    background-color: #ff0000;
+}
+.blue{
+    color: #3385ff;
+}
+.bodyContent .oneBlock>.blockTitle>.state.blue:before{
+    background-color: #3385ff;
+}
+.gray{
+    color: #868686;
+}
+.bodyContent .oneBlock>.blockTitle>.state.gray:before{
+    background-color: #868686;
+}
+.bodyContent .oneBlock>.blockTitle>.state:before{
+    content: " ";
+    display: inline-block;
+    float: left;
+    width: 10rpx;
+    height: 20rpx;
+    margin: 15rpx 10rpx 15rpx -20rpx;
+}
+
+.bodyContent .oneBlock>.title{
+    font-size: 28rpx;
+}
+.bodyContent .oneBlock>.title>view{
+    font-size: 28rpx;
+    margin-left: 20rpx;
+    display: inline-block;
+}
+.bodyContent .oneBlock>.otherInfo{
+    font-size: 20rpx;
+    height: 60rpx;
+    line-height: 40rpx;
+    display: block;
+}
+.bodyContent .oneBlock>.otherInfo .ui-block-a{
+    width: 20%;
+}
+.bodyContent .oneBlock>.otherInfo .ui-block-b{
+    width: 80%;
+}
+.bodyContent .oneBlock:after{
+    content: " ";
+    display:block;
+    height:0;
+    visibility:hidden;
+    clear:both;
+}
+
+.footer{
+    background-color: #FFFFFF;
+}
+.footer>view.ui-block-a, .footer>view.ui-block-b{
+    color: #bbbbbb;
+}
+.footer>view.active{
+    color: #3385ff;
+}
+.footer .topBlock{
+    display: block;
+    position: fixed;
+    height: 10rpx;
+    text-align: center;
+    width: 50%;
+    left: 50%;
+    transform: translateY(100%);
+    z-index: 19871230;
+    bottom: 85.6rpx;
+}
+.footer .topBlock>view{
+    display: block;
+    width: 160rpx;
+    height: 10rpx;
+    margin: 0 auto;
+    background-color: #3385ff;
+}

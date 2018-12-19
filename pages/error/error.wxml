@@ -1,0 +1,3 @@
+<view class="error textAlignCenter"></view>
+<view class="textAlignCenter">{{msg}}</view>
+<view class=" textAlignCenter marginTop" data-tel="400-401-2003" bindtap='call'>客服热线：400-401-2003</view>

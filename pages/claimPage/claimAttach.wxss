@@ -1,0 +1,98 @@
+.bodyContent {
+  font-size: 28rpx;
+  margin-bottom: 85.6rpx;
+  margin-top: 80rpx !important;
+  text-shadow: none !important;
+}
+
+.borderBottom {
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.borderRight {
+  border-right: 2rpx solid #f2f2f2;
+}
+
+.lineHeight {
+  line-height: 80rpx;
+  height: 80rpx;
+}
+
+.textAlignCenter {
+  text-align: center;
+}
+
+.footer {
+  background-color: #3385ff;
+  color: #fff;
+}
+
+.icon:before {
+  font-family: fullIconAll;
+}
+
+.valid:before {
+  content: "\f058";
+}
+
+.invalid:before {
+  content: "\f057";
+}
+
+.bodyHeader {
+  background-color: #fff;
+  color: #c8c7cd;
+  top: 0rpx;
+  width: 100%;
+  position: fixed;
+}
+
+.bodyHeader .active {
+  color: #3385ff;
+}
+
+.bodyContent .oneBlock {
+  height: 140rpx;
+  padding: 0 20rpx;
+  background-color: #fff;
+}
+
+.bodyContent .oneBlock>.imgview {
+  height: 140rpx;
+  padding: 10rpx;
+}
+
+.bodyContent .oneBlock>.imgview>image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.bodyContent .oneBlock.ui-grid-a>.ui-block-a {
+  width: 30%;
+}
+
+.bodyContent .oneBlock.ui-grid-a>.ui-block-b {
+  width: 70%;
+}
+
+.bodyContent .oneBlock>.contentview {
+  font-size: 24rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+  height: 140rpx;
+}
+
+.bodyContent .oneBlock>.contentview>.ui-grid-a {
+  height: 40rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+}
+
+.bodyContent .oneBlock>.contentview>.ui-grid-a>.ui-block-a {
+  width: 30%;
+}
+
+.bodyContent .oneBlock>.contentview>.ui-grid-a>.ui-block-b {
+  width: 70%;
+}

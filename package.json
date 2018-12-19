@@ -1,0 +1,14 @@
+{
+  "name": "melktech-user-miniprogram",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "pre-build": "echo o"
+  },
+  "dependencies": {
+    "es6-promise": "^4.2.5"
+  },
+  "devDependencies": {
+   
+  }
+}

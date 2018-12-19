@@ -1,0 +1,24 @@
+<view class="bodyContent">
+    <view class="processMap">
+        <view class="firstline">
+            <view class="circle write floatLeft active"></view>
+            <view class="line lineOne active"></view>
+            <view class="circle img floatCenter active"></view>
+            <view class="line lineTwo active"></view>
+            <view class="circle finished floatRight active"></view>
+        </view>
+        <view class="secondline">
+            <view class="floatLeft active">填写信息</view>
+            <view class="floatCenter active">影像提交</view>
+            <view class="floatRight active">赔案生成</view>
+        </view>
+    </view>
+
+    <view class="baseInfo">
+        <view class="ensureIcon textAlignCenter"></view>
+        <view class="textAlignCenter">您的赔案资料已提交</view>
+        <view class="textAlignCenter">我们将尽快对于案件进行审核</view>
+        <view class="textAlignCenter">可在赔案管理中实时了解赔案进度</view>
+    </view>
+    <view class="submitBtn textAlignCenter">完成</view>
+</view>

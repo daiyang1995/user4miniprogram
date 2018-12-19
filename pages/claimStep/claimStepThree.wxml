@@ -1,0 +1,110 @@
+<view class="bodyContent">
+  <view class="processMap">
+    <view class="firstline">
+      <view class="circle write floatLeft active"></view>
+      <view class="line lineOne active"></view>
+      <view class="circle img floatCenter active"></view>
+      <view class="line lineTwo"></view>
+      <view class="circle finished floatRight"></view>
+    </view>
+    <view class="secondline">
+      <view class="floatLeft active">填写信息</view>
+      <view class="floatCenter active">影像提交</view>
+      <view class="floatRight">赔案生成</view>
+    </view>
+  </view>
+  <view class="baseInfo">
+    <view class="baseInfoTip">请根据要求提交材料</view>
+
+    <view class="imgBlock block customImg borderBottom otherImg" id="idCardImg" data-code="1" data-min="2" data-max="2">
+      <view class="littleTitle ui-grid-a">
+        <view class="ui-block-a blockName">{{idCardName}}</view>
+      </view>
+      <block wx:if="{{haveIdCard}}">
+        <view class="infoview ui-grid-a">
+          <view class="ui-block-a info">
+            <view class="paddingRight">{{pageData.insuredName}} {{pageData.hiddenInsuredIdCard}}</view>
+          </view>
+          <view class="ui-block-b textAlignRight action" data-type="idCard" bindtap='actionChange'>变更证件</view>
+        </view>
+      </block>
+      <view hidden="{{!idCardShow}}">
+        <block wx:if="{{code2Images['1'] == undefined || code2Images['1'][0] == undefined}}">
+          <view class="needImg" data-sign="idCardFront" data-limit="true" data-code="1" data-min="2" data-max="2" bindtap='chooseImage'></view>
+        </block>
+        <block wx:else>
+          <view class="haveImg" data-sign="idCardFront" data-code="1">
+            <image src='{{code2Images["1"][0]}}' data-url="{{code2Images['1'][0]}}" bindtap='previewImage' />
+            <view class="textAlignCenter del" data-code="1" data-url="{{code2Images['1'][0]}}" bindtap='delImage'>删除</view>
+          </view>
+        </block>
+        <block wx:if="{{code2Images['1'] == undefined || code2Images['1'][1] == undefined}}">
+          <view class="needImg" data-sign="idCardBack" data-limit="true" data-code="1" data-min="2" data-max="2" bindtap='chooseImage'></view>
+        </block>
+        <block wx:else>
+          <view class="haveImg" data-sign="idCardBack" data-code="1">
+            <image src='{{code2Images["1"][1]}}' data-url="{{code2Images['1'][1]}}" bindtap='previewImage' />
+            <view class="textAlignCenter del" data-code="1" data-url="{{code2Images['1'][1]}}" bindtap='delImage'>删除</view>
+          </view>
+        </block>
+
+        <view class="ui-grid-a imgRemark">
+          <view class="ui-block-a textAlignCenter">身份证正面</view>
+          <view class="ui-block-b textAlignCenter">身份证反面</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="imgBlock block customImg borderBottom otherImg" id="bankImg" data-code="2" data-min="1" data-max="1">
+      <view class="littleTitle ui-grid-a">
+        <view class="ui-block-a blockName">{{bankCardName}}</view>
+      </view>
+      <view class="infoview ui-grid-a">
+        <view class="ui-block-a info">
+          <view class="paddingRight">{{pageData.bankName}} {{pageData.hiddenBankCard}}</view>
+        </view>
+        <view class="ui-block-b textAlignRight action" data-type="bankCard" bindtap='actionChange'>变更证件</view>
+      </view>
+      <view hidden="{{!bankCardShow}}">
+        <block wx:if="{{code2Images['2'] == undefined || code2Images['2'][0] == undefined}}">
+          <view class="needImg" data-sign="bankCard" data-limit="true" data-code="2" data-min="1" data-max="1" bindtap='chooseImage'></view>
+        </block>
+        <block wx:else>
+          <view class="haveImg" data-sign="idCardBack" data-code="2">
+            <image src='{{code2Images["2"][0]}}' data-url="{{code2Images['2'][0]}}" bindtap='previewImage' />
+            <view class="textAlignCenter del" data-code="2" data-url="{{code2Images['2'][0]}}" bindtap='delImage'>删除</view>
+          </view>
+        </block>
+
+      </view>
+    </view>
+    <block wx:for="{{pageData.noticeList}}" wx:for-item="data" wx:key="xxx" wx:for-index="i">
+      <view class="imgBlock block borderBottom otherImg" data-code="{{data['code']}}" data-min="{{data['min']}}" data-max="{{data['max']}}" data-have="{{data['isHave']}}">
+        <view class="littleTitle ui-grid-a">
+          <view class="ui-block-a blockName">{{data["name"]}}</view>
+          <block wx:if="{{data.url != undefined }}">
+            <view class="ui-block-b textAlignRight imgDemo" data-url="{{data['url']}}" bindtap='previewImage'>查看样例</view>
+          </block>
+        </view>
+        <block wx:if="{{data.remark != undefined}}">
+          <view class='littleTipTitle'>{{data["remark"]}}</view>
+        </block>
+        <block wx:for="{{data.code2Images}}" wx:for-item="t" wx:key="xxx" wx:for-index="idx">
+          <view class="haveImg">
+            <image src='{{t}}' data-url="{{t}}" bindtap='previewImage' />
+            <view class="textAlignCenter delete" data-code="{{data['code']}}" data-idx="{{i}}" data-url="{{t}}" bindtap='delImage'>删除</view>
+          </view>
+        </block>
+        <block wx:if="{{!data.code2Images || data.code2Images.length < data['max']}}">
+          <view class="needImg" data-sign="image{{data['code']}}" data-code="{{data['code']}}" data-min="{{data['min']}}" data-max="{{data['max']}}" data-limit="false" data-idx="{{i}}" data-now="{{data.code2Images.length}}" bindtap='chooseImage'></view>
+        </block>
+      </view>
+    </block>
+  </view>
+
+  <view class="submitBtn textAlignCenter" bindtap='claimStepThreePageSubmit'>我已准备好以上材料，现在提供</view>
+  <view class="littleTip textAlignCenter">如果无需继续，可以点此
+    <view class="cancel" bindtap='cancel'>取消理赔</view>
+  </view>
+
+</view>

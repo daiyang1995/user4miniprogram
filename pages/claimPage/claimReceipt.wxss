@@ -1,0 +1,74 @@
+.bodyContent {
+    font-size: 28rpx;
+    margin-bottom: 85.6rpx;
+}
+.borderBottom{
+    border-bottom: 2rpx solid #f2f2f2;
+}
+.borderRight{
+    border-right: 2rpx solid #f2f2f2;
+}
+.lineHeight{
+    line-height: 80rpx;
+    height: 80rpx;
+}
+.textAlignCenter{
+    text-align: center;
+}
+.footer{
+    background-color: #3385ff;
+    color: #FFFFFF;
+}
+.icon:before{
+    font-family: fullIconAll;
+    color: #3385ff;
+}
+.upArrow:after{
+    font-family: fullIconAll;
+    content: "\f077";
+    float: right;
+    color: #c8c7cd;
+}
+.downArrow:after{
+    font-family: fullIconAll;
+    content: "\f078";
+    float: right;
+    color: #c8c7cd;
+}
+.check:before{
+    content: "\f192";
+    margin-right: 10rpx;
+}
+.uncheck:before{
+    content: "\f10c";
+    margin-right: 10rpx
+}
+.bodyContent .oneBlock{
+    padding: 0 20rpx;
+    background-color: #FFFFFF;
+}
+.bodyContent .oneBlock>.ui-grid-c>.ui-block-a,
+.bodyContent .oneBlock>.ui-grid-c>.ui-block-d{
+    width: 5%;
+}
+.bodyContent .oneBlock>.ui-grid-c>.ui-block-b{
+    width: 50%;
+}
+.bodyContent .oneBlock>.ui-grid-c>.ui-block-c{
+    width: 40%;
+}
+.bodyContent .blockList .receiptList{
+    display: none;
+}
+.bodyContent .receiptList .oneReceipt{
+    background-color: #FFFFFF;
+    padding: 10rpx 20rpx;
+    font-size: 24rpx;
+    color: #c8c7cd;
+}
+.bodyContent .receiptList>.oneReceipt>.ui-grid-a>.ui-block-a{
+    width: 30%;
+}
+.bodyContent .receiptList>.oneReceipt>.ui-grid-a>.ui-block-b{
+    width: 70%;
+}

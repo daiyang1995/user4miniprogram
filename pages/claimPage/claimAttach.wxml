@@ -1,0 +1,36 @@
+<view class="bodyContent">
+  <view class="bodyHeader ui-grid-a lineHeight textAlignCenter borderBottom">
+    <block wx:if="{{auditStatus == 1}}">
+      <view class="icon valid ui-block-a active borderRight" data-id="1" bindtap='claimAttachValidPage'>有效影像</view>
+      <view class="icon invalid ui-block-b" data-id="0" bindtap='claimAttachInvalidPage'>无效影像</view>
+    </block>
+    <block wx:else>
+      <view class="icon valid ui-block-a borderRight" data-id="1" bindtap='claimAttachValidPage'>有效影像</view>
+      <view class="icon invalid ui-block-b active"  data-id="0" bindtap='claimAttachInvalidPage'>无效影像</view>
+    </block>
+  </view>
+  <view class="blockList">
+    <block wx:for="{{pageData.claimAttachList}}" wx:for-item="obj" wx:key="xxx" wx:for-index="idx">
+      <view class="oneBlock ui-grid-a borderBottom" data-idx="{{idx}}">
+        <view class="ui-block-a imgview borderRight">
+          <image src="{{obj.url}}" data-url="{{obj.url}}" bindtap='previewImage' />
+        </view>
+        <view class="ui-block-b contentview">
+          <view class="ui-grid-a">
+            <view class="ui-block-a">提交时间</view>
+            <view class="ui-block-b">{{obj.applyTimeStr}}</view>
+          </view>
+          <view class="ui-grid-a">
+            <view class="ui-block-a">审核时间</view>
+            <view class="ui-block-b">{{obj.auditTimeStr}}</view>
+          </view>
+          <view class="ui-grid-a">
+            <view class="ui-block-a">资料类型</view>
+            <view class="ui-block-b">{{obj.contentTypeStr}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="footer" bindtap='back'>返回</view>
+</view>

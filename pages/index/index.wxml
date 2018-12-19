@@ -1,0 +1,7 @@
+<block wx:if="{{show == true}}">
+  <view class="bodyContent">
+    <view class="imgLoading">
+      <image src="{{welcomeImg}}" />
+    </view>
+  </view>
+</block>

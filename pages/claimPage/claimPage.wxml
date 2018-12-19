@@ -1,0 +1,43 @@
+<view class="bodyContent">
+  <scroll-view scroll-y="true" bindscrolltolower="searchScroll" class="bodyOuterScroller">
+    <block wx:if="{{noData == false}}">
+      <block wx:for="{{dataList}}" wx:for-item="obj" wx:key="xxx">
+        <view class="oneBlock" data-id="{{obj.claimApplyId}}" bindtap='claimDetailPage'>
+          <view class="blockTitle">
+            <view class="state {{obj.color}} borderBottom">{{obj.statusStr}}</view>
+            <view class="money">金额:{{obj.settlementApprovedMoney}}元</view>
+          </view>
+          <view class="title">{{obj.insuredName}}
+            <view>{{obj.flowNo}}</view>
+          </view>
+          <view class="otherInfo">
+            <view class="ui-grid-a">
+              <view class="ui-block-a">创建时间：</view>
+              <view class="ui-block-b">{{obj.createTime}}</view>
+            </view>
+            <view class="ui-grid-a">
+              <view class="ui-block-a">出险类型：</view>
+              <view class="ui-block-b">{{obj.settlementTypeStr}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </block>
+    <block wx:else>
+      <view class='scroll'>
+        <view class="noData textAlignCenter">无理赔信息</view>
+      </view>
+    </block>
+  </scroll-view>
+  <view class="footer ui-grid-a">
+    <view class="ui-block-a plan" bindtap='backHomePage'> 
+      方案管理
+    </view>
+    <view class="ui-block-b active claim">
+      赔案管理
+    </view>
+    <view class="topBlock">
+      <view></view>
+    </view>
+  </view>
+</view>

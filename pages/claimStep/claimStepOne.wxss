@@ -1,0 +1,237 @@
+/* 进程图 */
+.processMap {
+  height: 120rpx;
+  margin: 20rpx 70rpx;
+}
+
+.floatLeft {
+  position: relative;
+  float: left;
+}
+
+.floatRight {
+  float: right;
+  position: relative;
+}
+
+.floatCenter {
+  float: left;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.processMap .circle {
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: inline-block;
+  border: 2rpx solid #c8c7cd;
+  border-radius: 40rpx;
+  box-sizing: border-box;
+  background-color: #c8c7cd;
+  z-index: 10;
+}
+
+.processMap .circle:before {
+  font-family: fullIconAll;
+  display: block;
+  color: #fff;
+  text-align: center;
+}
+
+.processMap .circle.active {
+  border-color: #3385ff;
+  background-color: #3385ff;
+}
+
+.processMap .circle.active:before {
+  color: #fff;
+}
+
+.processMap .write:before {
+  content: "\f040";
+  font-size: 40rpx;
+}
+
+.processMap .img:before {
+  content: "\f03e";
+  font-size: 40rpx;
+}
+
+.processMap .finished:before {
+  content: "\f00c";
+  font-size: 50rpx;
+}
+
+.processMap .firstline:after {
+  content: " ";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
+.processMap .line {
+  position: absolute;
+  width: 30%;
+  height: 2rpx;
+  display: inline-block;
+  background-color: #c8c7cd;
+  transform: translateX(-40rpx) translateY(40rpx) translateY(-50%);
+  z-index: 0;
+}
+
+.processMap .line.active {
+  background-color: #3385ff;
+}
+
+.processMap .line.lineTwo {
+  transform: translateX(250rpx) translateY(40rpx) translateY(-50%);
+}
+
+.processMap .secondline {
+  margin-top: 10rpx;
+  font-size: 22rpx;
+  color: #c8c7cd;
+}
+
+.processMap .secondline>view {
+  display: inline-block;
+}
+
+.processMap .secondline>view.active {
+  color: #3385ff;
+}
+
+/* end */
+
+.bodyContent {
+  font-size: 28rpx;
+}
+
+input {
+  font-size: 28rpx;
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 80rpx;
+  line-height: 80rpx;
+  box-sizing: border-box;
+  text-align: right;
+  color: #c8c7cd;
+}
+
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  font-size: 28rpx;
+  color: #c8c7cd;
+}
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-size: 28rpx;
+  color: #c8c7cd;
+}
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-size: 28rpx;
+  color: #c8c7cd;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-size: 28rpx;
+  color: #c8c7cd;
+}
+
+.downArrow:after {
+  font-family: fullIconAll;
+  content: "\f078";
+  color: #c8c7cd;
+  margin-left: 20rpx;
+}
+
+.textAlignCenter {
+  text-align: center;
+}
+
+.textAlignRight {
+  text-align: right;
+}
+
+.borderBottom {
+  border-bottom: 2rpx solid #f2f2f2;
+}
+
+.baseInfo {
+  background-color: #fff;
+  color: #c8c7cd;
+  padding: 0 20rpx;
+  line-height: 80rpx;
+}
+
+.baseInfo>.baseInfoTip {
+  height: 80rpx;
+  font-size: 22rpx;
+}
+
+.baseInfo>.infoLine {
+  height: 80rpx;
+}
+
+.baseInfo>.infoLine>.label {
+  color: black;
+  font-weight: 200;
+}
+
+.baseInfo>.infoLine.ui-grid-a>.ui-block-a {
+  width: 30%;
+  float: left;
+}
+
+.baseInfo>.infoLine.ui-grid-a>.ui-block-b {
+  width: 70%;
+}
+
+.submitBtn {
+  margin: 30rpx 30rpx 0 30rpx;
+  color: #fff;
+  background-color: #3385ff;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+}
+
+#homePage{
+  position: absolute;
+  width: 100%;
+} 
+#pageTwo , #pageThree{
+  position: absolute;
+  left: 100%;
+  width: 100%;
+}
+#pageTwo .bodyContent, #pageThree .bodyContent {
+  margin-bottom: 85.6rpx;
+}
+
+#pageTwo .baseInfo, #pageThree .baseInfo {
+  padding: 0;
+}
+
+#pageTwo .baseInfo>.infoLine, #pageThree .baseInfo>.infoLine {
+  padding: 0 20rpx;
+}
+
+#pageTwo .footer, #pageThree .footer {
+  background-color: #3385ff;
+  color: #fff;
+}
+
+#pageTwo .result, #pageThree .result {
+  line-height: 80rpx;
+  overflow: hidden;
+  background-color: #fff;
+}

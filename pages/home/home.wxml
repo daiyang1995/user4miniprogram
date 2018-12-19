@@ -1,0 +1,161 @@
+<view class="bodyContent">
+  <view class="littleTip ui-grid-c textAlignCenter">
+    <block wx:if="{{dataId==0}}">
+      <view class="ui-block-a active" data-id="0" bindtap='search'>个人</view>
+    </block>
+    <block wx:else>
+      <view class="ui-block-a " data-id="0" bindtap='search'>个人</view>
+    </block>
+    <block wx:if="{{dataId==3}}">
+      <view class="ui-block-b active" data-id="3" bindtap='search'>父母</view>
+    </block>
+    <block wx:else>
+      <view class="ui-block-b" data-id="3" bindtap='search'>父母</view>
+    </block>
+    <block wx:if="{{dataId==1}}">
+      <view class="ui-block-c active" data-id="1" bindtap='search'>配偶</view>
+    </block>
+    <block wx:else>
+      <view class="ui-block-c" data-id="1" bindtap='search'>配偶</view>
+    </block>
+    <block wx:if="{{dataId==2}}">
+      <view class="ui-block-d active" data-id="2" bindtap='search'>子女</view>
+    </block>
+    <block wx:else>
+      <view class="ui-block-d" data-id="2" bindtap='search'>子女</view>
+    </block>
+  </view>
+  <view class="bottomBlock">
+    <block wx:if="{{dataId==0}}">
+      <view></view>
+    </block>
+  </view>
+  <view class="bottomBlock">
+    <block wx:if="{{dataId==3}}">
+      <view></view>
+    </block>
+  </view>
+  <view class="bottomBlock">
+    <block wx:if="{{dataId==1}}">
+      <view></view>
+    </block>
+  </view>
+  <view class="bottomBlock">
+    <block wx:if="{{dataId==2}}">
+      <view></view>
+    </block>
+  </view>
+  <scroll-view scroll-y="true" bindscrolltolower="searchScroll" class="bodyOuterScroller" hidden='{{!page["0"].show}}' data-id="0">
+    <block wx:if="{{dataId==0 && !noData }}">
+      <block wx:for="{{dataList}}" wx:for-item="obj" wx:key="xxx">
+        <view class="oneBlock" data-id="{{obj.policyId}}" bindtap="goPolicyDetailPage">
+          <view class="state {{obj.color}} borderBottom">{{obj.policyStatusStr}}</view>
+          <view class="planName">{{obj.policyName}}</view>
+          <view class="otherInfo">
+            <view class="ui-grid-a">
+              <view class="ui-block-a">被保险人：</view>
+              <view class="ui-block-b">{{obj.hiddenName}}</view>
+            </view>
+            <view class="ui-grid-a">
+              <view class="ui-block-a">保障期限：</view>
+              <view class="ui-block-b">{{obj.startDateStr}} 至 {{obj.endDateStr}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </block>
+    <block wx:else>
+      <view class='scroll'>
+        <view class="noData textAlignCenter">无自己保障方案</view>
+      </view>
+    </block>
+  </scroll-view>
+
+  <scroll-view scroll-y="true" bindscrolltolower="searchScroll" class="bodyOuterScroller" hidden='{{!page["1"].show}}' data-id="1">
+    <block wx:if="{{dataId==1 && !noData }}">
+      <block wx:for="{{dataList}}" wx:for-item="obj" wx:key="xxx">
+        <view class="oneBlock" data-id="{{obj.policyId}}">
+          <view class="state {{obj.color}} borderBottom">{{obj.policyStatusStr}}</view>
+          <view class="planName">{{obj.policyName}}</view>
+          <view class="otherInfo">
+            <view class="ui-grid-a">
+              <view class="ui-block-a">被保险人：</view>
+              <view class="ui-block-b">{{obj.hiddenName}}</view>
+            </view>
+            <view class="ui-grid-a">
+              <view class="ui-block-a">保障期限：</view>
+              <view class="ui-block-b">{{obj.startDateStr}} 至 {{obj.endDateStr}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </block>
+    <block wx:else>
+      <view class='scroll'>
+        <view class="noData textAlignCenter">无配偶保障方案</view>
+      </view>
+    </block>
+  </scroll-view>
+  <scroll-view scroll-y="true" bindscrolltolower="searchScroll" class="bodyOuterScroller" hidden='{{!page["2"].show}}' data-id="2">
+    <block wx:if="{{dataId==2 && !noData }}">
+      <block wx:for="{{dataList}}" wx:for-item="obj" wx:key="xxx">
+        <view class="oneBlock" data-id="{{obj.policyId}}">
+          <view class="state {{obj.color}} borderBottom">{{obj.policyStatusStr}}</view>
+          <view class="planName">{{obj.policyName}}</view>
+          <view class="otherInfo">
+            <view class="ui-grid-a">
+              <view class="ui-block-a">被保险人：</view>
+              <view class="ui-block-b">{{obj.hiddenName}}</view>
+            </view>
+            <view class="ui-grid-a">
+              <view class="ui-block-a">保障期限：</view>
+              <view class="ui-block-b">{{obj.startDateStr}} 至 {{obj.endDateStr}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </block>
+    <block wx:else>
+      <view class='scroll'>
+        <view class="noData textAlignCenter">无子女保障方案</view>
+      </view>
+    </block>
+  </scroll-view>
+  <scroll-view scroll-y="true" bindscrolltolower="searchScroll" class="bodyOuterScroller" hidden='{{!page["3"].show}}' data-id="3">
+    <block wx:if="{{dataId==3 && !noData }}">
+      <block wx:for="{{dataList}}" wx:for-item="obj" wx:key="xxx">
+        <view class="oneBlock" data-id="{{obj.policyId}}">
+          <view class="state {{obj.color}} borderBottom">{{obj.policyStatusStr}}</view>
+          <view class="planName">{{obj.policyName}}</view>
+          <view class="otherInfo">
+            <view class="ui-grid-a">
+              <view class="ui-block-a">被保险人：</view>
+              <view class="ui-block-b">{{obj.hiddenName}}</view>
+            </view>
+            <view class="ui-grid-a">
+              <view class="ui-block-a">保障期限：</view>
+              <view class="ui-block-b">{{obj.startDateStr}} 至 {{obj.endDateStr}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </block>
+    <block wx:else>
+      <view class='scroll'>
+        <view class="noData textAlignCenter">无父母保障方案</view>
+      </view>
+    </block>
+  </scroll-view>
+
+  <view class="footer ui-grid-a">
+    <view class="ui-block-a active plan">
+      方案管理
+    </view>
+    <view class="ui-block-b claim" bindtap='goClaimPage'>
+      赔案管理
+    </view>
+    <view class="topBlock">
+      <view></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,133 @@
+.bodyContent{
+  font-size: 28rpx;
+  margin-bottom: 85.6rpx;
+}
+.textAlignCenter{
+    text-align: center;
+}
+.textAlignRight{
+    text-align: right;
+}
+.littleSize{
+    font-size: 24rpx;
+}
+.icon:before,.icon:after{
+    font-family: fullIconAll;
+}
+.lineHeight{
+    height: 80rpx;
+    line-height: 80rpx;
+}
+.margin{
+    margin: 30rpx 0;
+}
+.padding{
+    padding: 30rpx 0;
+}
+.paddingTop{
+    padding-top: 30rpx;
+}
+.paddingBottom{
+    padding-bottom: 30rpx;
+}
+.borderBottom{
+    border-bottom: 2rpx solid #f2f2f2;
+}
+.rightArrowAfter:after{
+    content: "\f105";
+}
+.downArrowAfter:after{
+    content: "\f107";
+}
+.upArrowAfter:after{
+    content: '\f106';
+}
+
+.orange{
+    color: #ff9900;
+}
+.blue{
+    color: #3385ff;
+}
+.gray{
+    color: #868686;
+}
+.block{
+    background-color: #FFFFFF;
+    padding: 20rpx 20rpx 30rpx 20rpx;
+}
+.block .bodyTitle{
+    white-space:nowrap;
+}
+.block .planName{
+    font-size: 34rpx;
+    margin-bottom: 10rpx;
+    color: #747474;
+    font-weight: 700;
+}
+.block .bigState{
+    line-height: 120rpx;
+    height: 120rpx;
+}
+.baseInfo{
+    line-height: 40rpx;
+    font-size: 24rpx;
+}
+.baseInfo.planInfo{
+    font-size: 20rpx;
+    margin-top: 30rpx;
+}
+.coverageInfo .line.key{
+    font-size: 28rpx;
+    line-height: 50rpx;
+    padding-left: 10rpx;
+}
+.coverageInfo .line.money{
+    margin-right: 10rpx;
+    font-size: 50rpx;
+    margin-top: 20rpx;
+}
+.coverageInfo .line.btn{
+    font-size: 26rpx;
+    color: #3385ff;
+    margin-right: 10rpx;
+}
+.coverageInfo .line.rightArrowAfter:after{
+    margin-left: 10rpx;
+}
+.coverageInfo .line{
+    display: block;
+}
+.coverageInfo.ui-grid-a>.ui-block-a,.coverageInfo.ui-grid-a>.ui-block-b{
+    line-height: 50rpx;
+}
+.coverageInfo.ui-grid-a>.ui-block-a{
+    border-right: 2rpx solid #f2f2f2;
+}
+.coverageInfo.ui-grid-a{
+    background-color: #FFFFFF;
+}
+
+.makeInsure{
+    background-color: #FFFFFF;
+    color: #3385ff;
+}
+.makeInsure a{
+    text-decoration: none;
+    color: #3385ff !important;
+}
+.mobileIcon:before{
+    content: '\f095';
+    margin-right: 10rpx;
+    font-size: 30rpx;
+}
+.insureIcon:before{
+    content: '\f0fe';
+    margin-right: 10rpx;
+    font-size: 30rpx;
+}
+
+.footer{
+    background-color: #3385ff;
+    color: #FFFFFF;
+}

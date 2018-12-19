@@ -1,0 +1,97 @@
+<view data-role="page" id="homePage" animation="{{homePageAnimation}}">
+  <view class="bodyContent">
+    <view class="processMap">
+      <view class="firstline">
+        <view class="circle write floatLeft active"></view>
+        <view class="line lineOne "></view>
+        <view class="circle img floatCenter"></view>
+        <view class="line lineTwo"></view>
+        <view class="circle finished floatRight"></view>
+      </view>
+      <view class="secondline">
+        <view class="floatLeft active">填写信息</view>
+        <view class="floatCenter">影像提交</view>
+        <view class="floatRight">赔案生成</view>
+      </view>
+    </view>
+
+    <view class="baseInfo">
+      <view class="baseInfoTip">请填写并确定信息</view>
+      <view class="infoLine ui-grid-a borderBottom">
+        <view class="ui-block-a label">就诊类型</view>
+        <view class="ui-block-b textAlignRight">{{pageData.settlementTypeStr}}
+        </view>
+      </view>
+      <view class="infoLine ui-grid-a borderBottom">
+        <view class="ui-block-a label">被保险人</view>
+        <view class="ui-block-b textAlignRight">{{pageData.insuredName}}
+        </view>
+      </view>
+      <view class="infoLine ui-grid-a borderBottom">
+        <view class="ui-block-a label">联系电话</view>
+        <view class="ui-block-b textAlignRight">
+          <input type="number" id="mobile" class="mobile" name="mobile" value="{{mobile}}"   autocomplete="off" placeholder="请输入联系电话" bindinput="bindMobile"  />
+        </view>
+      </view>
+      <view class="infoLine ui-grid-a borderBottom">
+        <view class="ui-block-a label">就诊日期</view>
+        <picker mode="date" value="{{time}}" start="{{pageData.startDateStr}}" end="{{pageData.endDateStr}}" bindchange="bindDateChange">
+          <view class="ui-block-b textAlignRight downArrow treatDate" id="treatDate">{{treatDate}}</view>
+        </picker>
+      </view>
+      <view class="infoLine ui-grid-a borderBottom">
+        <view class="ui-block-a label">就诊费用</view>
+        <view class="ui-block-b textAlignRight treatMoney">
+          <input type="number" name="treatMoney" id="treatMoney" class="treatMoney" data-role="none" autocomplete="off" placeholder="请输入就诊费用，单位元" bindinput="bindTreatMoney"  />
+        </view>
+      </view>
+      <view class="infoLine ui-grid-a borderBottom">
+        <view class="ui-block-a label">就诊医院</view>
+        <view class="ui-block-b textAlignRight downArrow treatHospital" bindtap='pageShow' data-page="pageTwo" id="treatHospital">{{hospitalName}}</view>
+      </view>
+      <view class="infoLine ui-grid-a">
+        <view class="ui-block-a label">就诊科室</view>
+        <view class="ui-block-b textAlignRight downArrow treatDepartment" bindtap='pageShow' data-page="pageThree" id="treatDepartment">{{treatDepartmentStr}}</view>
+      </view>
+    </view>
+    <view class="submitBtn textAlignCenter" bindtap='claimStepOnePageSubmit'>提交信息</view>
+  </view>
+</view>
+<view data-role="page" id="pageTwo" animation="{{pageTwoAnimation}}">
+  <view class="bodyContent">
+    <view class="baseInfo">
+      <view class="infoLine ui-grid-a borderBottom">
+        <view class="ui-block-a label">就诊医院</view>
+        <view class="ui-block-b textAlignRight">
+          <input type="text" data-role="none" autocomplete="off" id="hospitalName" placeholder="请输入医院名称，至少4个字" bindinput="searchHospital" />
+        </view>
+      </view>
+    </view>
+    <view class="result textAlignCenter">
+      <block wx:for="{{hospitalList}}" wx:for-item="t" wx:key="xxx" wx:for-index="i">
+        <view class="borderBottom value" data-value="{{t}}" bindtap='choseHospitalName'>
+          {{t}}
+        </view>
+      </block>
+    </view>
+    <view class="footer" bindtap='pageHide' data-page="pageTwo">返回</view>
+  </view>
+</view>
+
+<view data-role="page" id="pageThree" animation="{{pageThreeAnimation}}">
+  <view class="bodyContent">
+    <view class="baseInfo">
+      <view class="infoLine ui-grid-a borderBottom">
+        <view class="ui-block-a label">就诊科室</view>
+      </view>
+    </view>
+    <view class="result textAlignCenter">
+      <block wx:for="{{pageData.treatDepartmentList}}" wx:for-item="t" wx:key="xxx" wx:for-index="i">
+        <view class="borderBottom value" data-value="{{t}}" bindtap='choseTreatDepartment'>
+          {{t}}
+        </view>
+      </block>
+    </view>
+    <view class="footer" bindtap='pageHide' data-page="pageThree">返回</view>
+  </view>
+</view>

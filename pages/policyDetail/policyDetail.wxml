@@ -1,0 +1,63 @@
+<view class="bodyContent">
+  <view class="block borderBottom  padding">
+    <view class="ui-grid-a bodyTitle borderBottom paddingBottom">
+      <view class="ui-block-a ">
+        <view class="planName lineHeight">{{pageData.planName}}</view>
+        <view class="policyNO littleSize">{{pageData.policyNo}}</view>
+        <view class="insuranceName littleSize ">{{pageData.insurerCompName}}</view>
+      </view>
+      <view class="ui-block-b textAlignRight">
+        <block wx:if="{{pageData.policyStatus == 0}}">
+          <view class="bigState orange">
+            {{pageData.policyStatusStr}}
+          </view>
+        </block>
+        <block wx:if="{{pageData.policyStatus == -1}}">
+          <view class="bigState gray">
+            {{pageData.policyStatusStr}}
+          </view>
+        </block>
+        <block wx:else>
+          <view class="bigState blue">
+            {{pageData.policyStatusStr}}
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="baseInfo paddingTop">
+      <view class="ui-grid-a">
+        <view class="ui-block-a">被保险人</view>
+        <view class="ui-block-b textAlignRight">{{pageData.hiddenInsuredName}}</view>
+      </view>
+      <view class="ui-grid-a">
+        <view class="ui-block-a">证件号码</view>
+        <view class="ui-block-b textAlignRight">{{pageData.hiddenInsuredIdCard}}</view>
+      </view>
+      <view class="ui-grid-a">
+        <view class="ui-block-a">保障期限</view>
+        <view class="ui-block-b textAlignRight">{{pageData.startDateStr}}到{{endDateStr}}
+        </view>
+      </view>
+    </view>
+    <view class="baseInfo planInfo borderBottom paddingBottom">
+      <block wx:for="{{pageData.planInfo}}" wx:for-item="onePlanInfo" wx:key="xxx">
+        <view class="ui-grid-a" data-id="{{onePlanInfo}}">
+          <view class="ui-block-a">{{onePlanInfo["remark"]}}</view>
+          <view class="ui-block-b textAlignRight">{{onePlanInfo["desc"]}}</view>
+        </view>
+      </block>
+    </view>
+    <view class="coverageInfo paddingTop {{className}}">
+      <block wx:for="{{pageData.coverageInfo}}" wx:for-item="item" wx:key="xxx" wx:for-index="key">
+        <view class="{{item.className}} ">
+          <view class="line key">{{key}}</view>
+          <view class="line money textAlignRight" data-money="{{item.money}}" >{{item.nowMoney}}</view>
+          <view class="line textAlignRight btn icon rightArrowAfter" bindtap='claimStepOnePage' data-key="{{key}}">我要报销</view>
+        </view>
+      </block>
+    </view>
+
+  </view>
+  <view class="icon makeInsure lineHeight mobileIcon textAlignCenter margin" bindtap='call' data-tel="{{tel}}">联系客服（{{tel}}）</view>
+  <view class="footer" bindtap='backHomePage'>返回</view>
+</view>

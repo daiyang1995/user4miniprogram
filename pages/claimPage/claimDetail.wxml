@@ -1,0 +1,64 @@
+<view class="bodyContent">
+  <view class="bodyHeader">
+    <view class="policyApplyNo lineHeight">{{pageData.flowNo}}</view>
+    <view class="bigState">{{pageData.statusStr}}</view>
+  </view>
+  <view class="baseInfo borderBottom">
+    <view class="oneline ui-grid-a">
+      <view class="ui-block-a label">出险人</view>
+      <view class="ui-block-b text textAlignRight">{{pageData.insuredName}}</view>
+    </view>
+    <view class="oneline ui-grid-a">
+      <view class="ui-block-a label">保险单号</view>
+      <view class="ui-block-b text textAlignRight">{{pageData.policyNo}}</view>
+    </view>
+    <view class="oneline ui-grid-a">
+      <view class="ui-block-a label">出险类型</view>
+      <view class="ui-block-b text textAlignRight">{{pageData.settlementTypeStr}}</view>
+    </view>
+    <view class="oneline ui-grid-a">
+      <view class="ui-block-a label">申请日期</view>
+      <view class="ui-block-b text textAlignRight">{{pageData.applyDate}}</view>
+    </view>
+    <view class="oneline ui-grid-a ">
+      <view class="ui-block-a label">申请人</view>
+      <view class="ui-block-b text textAlignRight">{{pageData.applyer}}</view>
+    </view>
+  </view>
+  <view class="otherInfo">
+    <view class="oneline borderBottom">
+      <block wx:if="{{pageData.status == '100'}}">
+        <view class="lineHeight money haveData content" bindtap='claimReceiptPage'>赔付金额
+          <view class="blue">{{pageData.settlementApprovedMoney}}</view>元
+        </view>
+      </block>
+      <block wx:else>
+        <view class="lineHeight money content">赔付金额
+          <view class="blue">{{pageData.settlementApprovedMoney}}</view>元
+        </view>
+      </block>
+
+    </view>
+    <view class="oneline borderBottom">
+      <view class="lineHeight image content" bindtap='claimAttachPage'>您提交了
+        <view class="blue">{{pageData.attachNum}}个</view>影像资料
+      </view>
+    </view>
+    <block wx:if="{{pageData.bankName!='' && pageData.hiddenBankCard!=''}}">
+      <view class="oneline borderBottom">
+        <view class="lineHeight bank content">[{{pageData.bankName}}]{{pageData.hiddenBankCard}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="logInfo">
+    <block wx:for="{{pageData.claimLogList}}" wx:for-item="obj" wx:key="xxx" wx:for-index="i">
+      <view class="oneline">
+        <view class="log lineHeight">
+          <view class="logText">{{obj.remark}}</view>
+          <view class="logDate">{{obj.time}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="footer" bindtap='back'>返回</view>
+</view>

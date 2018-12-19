@@ -1,0 +1,26 @@
+.textAlignCenter {
+  text-align: center;
+}
+
+.marginTop {
+  margin-top: 0.2rem;
+}
+
+a {
+  color: #3385ff !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+}
+
+.error {
+  height: 3rem;
+  line-height: 3rem;
+}
+
+.error:before {
+  display: block;
+  font-family: fullIconAll;
+  content: "\f071";
+  font-size: 1.6rem;
+  color: #ffc107;
+}

@@ -1,0 +1,48 @@
+<view class="bodyContent">
+  <view class="processMap">
+    <view class="firstline">
+      <view class="circle write floatLeft active"></view>
+      <view class="line lineOne active"></view>
+      <view class="circle img floatCenter"></view>
+      <view class="line lineTwo"></view>
+      <view class="circle finished floatRight"></view>
+    </view>
+    <view class="secondline">
+      <view class="floatLeft active">填写信息</view>
+      <view class="floatCenter">影像提交</view>
+      <view class="floatRight">赔案生成</view>
+    </view>
+  </view>
+  <view class="baseInfo borderBottom">
+    <view class="ensureIcon textAlignCenter"></view>
+    <view class="textAlignCenter">您的赔案信息已受理</view>
+    <view class="textAlignCenter">请尽快提交理赔材料启动理赔流程</view>
+  </view>
+  <block wx:if="{{pageData.psList != undefined  && pageData.psList.length != 0}}">
+
+    <view class="baseInfo">
+      <view class="littleHeader">郑重说明：</view>
+      <view class="needFileList">
+        <block wx:for="{{pageData.psList}}" wx:for-item="t" wx:key="xxx" wx:for-index="i">
+          <view>{{i+1}}、{{t}}</view>
+        </block>
+      </view>
+    </view>
+  </block>
+
+  <view class="baseInfo">
+    <view class="littleHeader">请准备并上传以下材料：</view>
+    <view class="needFileList">
+      <block wx:for="{{pageData.noticeList}}" wx:for-item="t" wx:key="xxx" wx:for-index="i">
+        <view>
+          {{i+1}}、{{t}}
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="submitBtn textAlignCenter" bindtap='goClaimStepThree'>我已准备好以上材料，现在提供</view>
+  <view class="littleTip textAlignCenter">如果无需继续，可以点此
+    <view class="cancel" bindtap='cancel'>取消理赔</view>
+  </view>
+</view>
